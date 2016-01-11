@@ -1,3 +1,3 @@
-# ThreeJSBoilerPlate
+# Lesson01 - Part 1
 
-BoilerPlate for COMP392 - Advanced Graphics @ Centennial College
+Lesson01 - Part 1 for COMP392 - Advanced Graphics @ Centennial College
