@@ -78,10 +78,7 @@ function init() {
     spotLight.castShadow = true;
     scene.add(spotLight);
     console.log("Added Spot Light to Scene");
-    // add extras
-    gui = new GUI();
-    control = new Control(0.005, cubeMaterial.opacity, cubeMaterial.color.getHex());
-    addControl(control);
+    // Add framerate stats
     addStatsObject();
     document.body.appendChild(renderer.domElement);
     gameLoop(); // render the scene	
@@ -104,10 +101,7 @@ function gameLoop() {
     stats.update();
     // render using requestAnimationFrame
     requestAnimationFrame(gameLoop);
-    cube.material.transparent = true;
-    cube.material.opacity = control.opacity;
-    cube.material.color = new Color(control.color);
-    cube.rotation.y += control.rotationSpeed;
+    // render the scene
     renderer.render(scene, camera);
 }
 // Setup default renderer
