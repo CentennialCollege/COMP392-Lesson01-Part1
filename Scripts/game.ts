@@ -88,45 +88,10 @@ function init() {
     scene.add(sphere);
     console.log("Added Sphere Primitive to scene");
     
-	// Add a SpotLight to the scene
-	spotLight = new SpotLight(0xffffff);
-	spotLight.position.set (10, 20, 20);
-	spotLight.castShadow = true;
-	scene.add(spotLight);
-	console.log("Added Spot Light to Scene");
-	
-    // Add framerate stats
-    addStatsObject();
-    
 	document.body.appendChild(renderer.domElement);
-	gameLoop(); // render the scene	
+    renderer.render(scene, camera);
 }
 
-function addControl(controlObject: Control):void {
-	gui.add(controlObject, 'rotationSpeed',-0.01,0.01);
-	gui.add(controlObject, 'opacity', 0.1, 1);
-	gui.addColor(controlObject, 'color');
-}
-
-function addStatsObject() {
-	stats = new Stats();
-	stats.setMode(0);
-	stats.domElement.style.position = 'absolute';
-	stats.domElement.style.left = '0px';
-	stats.domElement.style.top = '0px';
-	document.body.appendChild(stats.domElement);
-}
-
-// Setup main game loop
-function gameLoop():void {
-	stats.update();
-	
-	// render using requestAnimationFrame
-	requestAnimationFrame(gameLoop);
-	
-    // render the scene
-	renderer.render(scene, camera);
-}
 
 // Setup default renderer
 function setupRenderer():void {
